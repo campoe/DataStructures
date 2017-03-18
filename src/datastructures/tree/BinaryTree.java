@@ -27,6 +27,32 @@ public class BinaryTree<T extends Comparable<T>> {
         return false;
     }
 
+    public void insert(T item) {
+        Node node = new Node(item);
+        if (root == null) {
+            root = node;
+            return;
+        }
+        Node child = root;
+        Node parent = null;
+        while (true) {
+            parent = child;
+            if (item.compareTo(child.item) < 0) {
+                child = child.left;
+                if (child == null) {
+                    parent.left = node;
+                    return;
+                }
+            } else {
+                child = child.right;
+                if (child == null) {
+                    parent.right = node;
+                    return;
+                }
+            }
+        }
+    }
+
     public boolean remove(T item) {
         Node parent = null;
         Node child = root;
@@ -67,32 +93,6 @@ public class BinaryTree<T extends Comparable<T>> {
             }
         }
         return true;
-    }
-
-    public void insert(T item) {
-        Node node = new Node(item);
-        if (root == null) {
-            root = node;
-            return;
-        }
-        Node child = root;
-        Node parent = null;
-        while (true) {
-            parent = child;
-            if (item.compareTo(child.item) < 0) {
-                child = child.left;
-                if (child == null) {
-                    parent.left = node;
-                    return;
-                }
-            } else {
-                child = child.right;
-                if (child == null) {
-                    parent.right = node;
-                    return;
-                }
-            }
-        }
     }
 
     public class Node {
