@@ -24,10 +24,11 @@ public class QueueTest {
     }
 
     @Test
-    public void enqueue() throws Exception {
-        int size = queue.size();
-        assertTrue(queue.enqueue(1) == 1);
-        assertTrue(queue.size() == size + 1);
+    public void clear() throws Exception {
+        queue.enqueue(1);
+        assertTrue(queue.size() == 1);
+        queue.clear();
+        assertTrue(queue.size() == 0);
     }
 
     @Test
@@ -40,12 +41,10 @@ public class QueueTest {
     }
 
     @Test
-    public void peek() throws Exception {
-        queue.enqueue(2);
-        queue.enqueue(1);
+    public void enqueue() throws Exception {
         int size = queue.size();
-        assertTrue(queue.peek() == 2);
-        assertTrue(queue.size() == size);
+        assertTrue(queue.enqueue(1) == 1);
+        assertTrue(queue.size() == size + 1);
     }
 
     @Test
@@ -56,11 +55,12 @@ public class QueueTest {
     }
 
     @Test
-    public void clear() throws Exception {
+    public void peek() throws Exception {
+        queue.enqueue(2);
         queue.enqueue(1);
-        assertTrue(queue.size() == 1);
-        queue.clear();
-        assertTrue(queue.size() == 0);
+        int size = queue.size();
+        assertTrue(queue.peek() == 2);
+        assertTrue(queue.size() == size);
     }
 
     @Test

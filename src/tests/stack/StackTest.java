@@ -24,6 +24,14 @@ public class StackTest {
     }
 
     @Test
+    public void clear() throws Exception {
+        stack.push(1);
+        assertTrue(stack.size() == 1);
+        stack.clear();
+        assertTrue(stack.size() == 0);
+    }
+
+    @Test
     public void isEmpty() throws Exception {
         assertTrue(stack.isEmpty());
         stack.push(1);
@@ -62,14 +70,6 @@ public class StackTest {
         int item2 = stack.push(2);
         assertTrue(stack.search(item) == 1);
         assertTrue(stack.search(item2) == 2);
-    }
-
-    @Test
-    public void clear() throws Exception {
-        stack.push(1);
-        assertTrue(stack.size() == 1);
-        stack.clear();
-        assertTrue(stack.size() == 0);
     }
 
     @Test

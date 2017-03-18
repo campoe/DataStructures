@@ -14,8 +14,8 @@ public class Stack<T> {
         list = new ArrayList<>();
     }
 
-    public int size() {
-        return list.size();
+    public void clear() {
+        list.clear();
     }
 
     public boolean isEmpty() {
@@ -49,8 +49,8 @@ public class Stack<T> {
         return -1;
     }
 
-    public void clear() {
-        list.clear();
+    public int size() {
+        return list.size();
     }
 
 }

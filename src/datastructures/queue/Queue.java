@@ -14,9 +14,8 @@ public class Queue<T> {
         list = new ArrayList<>();
     }
 
-    public T enqueue(T item) {
-        list.add(0, item);
-        return item;
+    public void clear() {
+        list.clear();
     }
 
     public T dequeue() {
@@ -26,6 +25,15 @@ public class Queue<T> {
         return null;
     }
 
+    public T enqueue(T item) {
+        list.add(0, item);
+        return item;
+    }
+
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+
     public T peek() {
         if (size() > 0) {
             return list.get(size() - 1);
@@ -33,16 +41,8 @@ public class Queue<T> {
         return null;
     }
 
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
     public int size() {
         return list.size();
-    }
-
-    public void clear() {
-        list.clear();
     }
 
 }
