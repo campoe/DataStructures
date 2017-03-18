@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Coen on 18-3-2017.
  */
-public class Queue<T> {
+public class Queue<T extends Comparable<T>> {
 
     private final List<T> list;
 
