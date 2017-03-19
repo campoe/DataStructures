@@ -20,13 +20,13 @@ public class Queue<T extends Comparable<T>> {
 
     public T dequeue() {
         if (size() > 0) {
-            return list.remove(size() - 1);
+            return list.remove(0);
         }
         return null;
     }
 
     public T enqueue(T item) {
-        list.add(0, item);
+        list.add(item);
         return item;
     }
 
@@ -36,7 +36,7 @@ public class Queue<T extends Comparable<T>> {
 
     public T peek() {
         if (size() > 0) {
-            return list.get(size() - 1);
+            return list.get(0);
         }
         return null;
     }
