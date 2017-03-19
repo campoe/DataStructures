@@ -1,7 +1,5 @@
 package datastructures.tree;
 
-import java.util.Comparator;
-
 /**
  * Created by Coen on 18-3-2017.
  */
@@ -34,7 +32,7 @@ public class BinaryTree<T extends Comparable<T>> {
             return;
         }
         Node child = root;
-        Node parent = null;
+        Node parent;
         while (true) {
             parent = child;
             if (item.compareTo(child.item) < 0) {
