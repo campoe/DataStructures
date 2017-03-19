@@ -32,6 +32,7 @@ public class LinkedList<T> {
             head = head.next;
         } else {
             Node node = findBefore(item);
+            assert node != null;
             node.next = node.next.next;
         }
         size--;
