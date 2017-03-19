@@ -19,7 +19,7 @@ public class BlockingQueue<T extends Comparable<T>> {
 
     private void awaitEnqueue() {
         synchronized (this) {
-            if (list.isEmpty()) {
+            if (isEmpty()) {
                 try {
                     wait();
                 } catch (InterruptedException e) {
