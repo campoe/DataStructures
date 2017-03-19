@@ -45,13 +45,6 @@ public class BlockingStack<T> {
         }
     }
 
-    public T pop() {
-        synchronized (popLock) {
-            awaitPush();
-            return list.remove(0);
-        }
-    }
-
     public T push(T item) {
         synchronized (pushLock) {
             list.add(0, item);
@@ -60,6 +53,13 @@ public class BlockingStack<T> {
             }
         }
         return item;
+    }
+
+    public T pop() {
+        synchronized (popLock) {
+            awaitPush();
+            return list.remove(0);
+        }
     }
 
     public int size() {
